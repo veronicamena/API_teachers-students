@@ -1,0 +1,16 @@
+extends ../layout.pug
+
+block content
+    h2 Formulario Nuevo Profesor
+    form(action="/teacher/create", method="POST")
+        .form-group
+            label(for="nombre") Nombre:
+            input.form-control(type="text", name="nombre")
+        .form-group
+            label(for="apellidos") Apellidos:
+            input.form-control(type="text", name="apellidos")
+        .form-group
+            label(for="edad") Edad:
+            input.form-control(type="number", name="edad")
+        input.btn.btn-success.btn-block(type="submit", value="Enviar")
+        

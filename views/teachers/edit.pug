@@ -1,0 +1,21 @@
+extends ../layout.pug
+
+block content
+    h2 Edición de Profesor
+    form(action="/teacher/update", method="POST")
+        .form-group
+            label(for="nombre") Nombre:
+            input.form-control(type="text", name="nombre", value=teacher.nombre)
+        .form-group
+            label(for="apellidos") Apellidos:
+            input.form-control(type="text", name="apellidos", value=teacher.apellidos)
+        .form-group
+            label(for="edad") Edad:
+            input.form-control(type="number", name="edad", value=teacher.edad)
+        .form-group
+            label(for="especialidad") Especialidad:
+            input.form-control(type="checkbox", name="especialidad", checked=teacher.especialidad)
+
+            input(type="hidden", name="teacherId", value=teacher._id)
+
+        input.btn.btn-primary.btn-block(type="submit", value="Guardar cambios")

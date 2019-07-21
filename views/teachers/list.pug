@@ -1,0 +1,26 @@
+extends ../layout.pug
+
+
+block content
+    h2 Lista de Estudiantes
+    table.table 
+        thead
+            tr
+                th Nombre
+                th Apellidos
+                th Edad
+                th Especialidad
+        tbody
+            each prof in profesores
+                tr
+                    td=prof.nombre
+                    td=prof.apellidos
+                    td=prof.dni
+                    td=prof.edad
+                    td=prof.especialidad
+                    td 
+                        a.btn.btn-success.btn-sm(href='/teachers/' + estu._id) Ver
+                        a.btn.btn-warning.btn-sm(href='/teachers/edit/' + estu._id) Editar
+                        a.btn.btn-danger.btn-sm(href='/teachers/delete/' + estu._id, onclick="return confirm('¿Seguro que deseas eliminar al profesor?')") Eliminar
+                    
+                    

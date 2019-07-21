@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+    table
+        thead
+            tr
+                th Nombre
+                th Apellidos
+                th Edad
+                th Nombre Completo
+        tbody
+            each pers in arrPersonas
+                tr
+                    td= pers.nombre
+                    td= pers.apellidos
+                    td= pers.edad
+                    td= pers.nombre_completo

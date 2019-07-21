@@ -1,0 +1,28 @@
+extends ../layout.pug
+
+
+block content
+    h2 Lista de Estudiantes
+    table.table 
+        thead
+            tr
+                th Nombre
+                th Apellidos
+                th Dni
+                th Edad
+                th Activo
+                th Acciones
+        tbody
+            each estu in estudiantes
+                tr
+                    td=estu.nombre
+                    td=estu.apellidos
+                    td=estu.dni
+                    td=estu.edad
+                    td=estu.activo
+                    td 
+                        a.btn.btn-success.btn-sm(href='/students/' + estu._id) Ver
+                        a.btn.btn-warning.btn-sm(href='/students/edit/' + estu._id) Editar
+                        a.btn.btn-danger.btn-sm(href='/students/delete/' + estu._id, onclick="return confirm('¿Seguro que deseas eliminar al estudiante?')") Eliminar
+                    
+                    

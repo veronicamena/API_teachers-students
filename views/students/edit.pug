@@ -1,0 +1,24 @@
+extends ../layout.pug
+
+block content
+    h2 Edición de Estudiante
+    form(action="/students/update", method="POST")
+        .form-group
+            label(for="nombre") Nombre:
+            input.form-control(type="text", name="nombre", value=estudiante.nombre)
+        .form-group
+            label(for="apellidos") Apellidos:
+            input.form-control(type="text", name="apellidos", value=estudiante.apellidos)
+        .form-group
+            label(for="dni") DNI:
+            input.form-control(type="text", name="dni", value=estudiante.dni)
+        .form-group
+            label(for="edad") Edad:
+            input.form-control(type="number", name="edad", value=estudiante.edad)
+        .form-group
+            label(for="activo") Activo:
+            input.form-control(type="checkbox", name="activo", checked=estudiante.activo)
+
+            input(type="hidden", name="studentId", value=estudiante._id)
+
+        input.btn.btn-primary.btn-block(type="submit", value="Guardar cambios")
